@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TipCalculator.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label
+               Text = "Valor:"
+                />
+            <Entry
+                x:Name="ValueEntry"
+                Placeholder="Digite aqui o valor da refeição"
+                />
+            <HorizontalStackLayout Spacing="10">
+                <Label
+                    Text="Gorjeta:"/>
+                <Label
+                    x:Name="TipPercentLabel"
+                    Text="R$10.00"/>
+                <Label
+                    Text="ValorTotal:"/>
+                <Label
+                    x:Name="TotalLabel"
+                    Text="R$11.00"/>
+                <Label
+                    Text="Porcentagem de Gorjeta:"/>
+                <Label
+                    x:Name="TigLabel"
+                    Text="10%"/>
+            </HorizontalStackLayout>
+            <Slider
+                x:Name="PercentageSlider"
+                Minimum="0"
+                Maximum="100"
+   
+                />
+            
+            <HorizontalStackLayout>
+                
+                <Button
+                    x:Name="Button15Percent"
+                    Text="15%"
+                    Clicked="Button15Percent_Clicked"
+                 />
+                <Button
+                      x:Name="Button30Percent"
+                      Text="30%"
+                    SemanticProperties.Hint="Cliqueaqui sevoce acha que o serviço foi ótimo"
+                      Clicked="Button30Percent_Clicked"
+                   />
+                <HorizontalStackLayout>
+                        <Button
+                    x:Name="ButtonRoundUp"
+                    Text="Arredondar para cima"
+                    Clicked="ButtonRoundUp_Clicked"
+                 />
+                           
+                <Button
+                   x:Name="ButtonRoundDown"
+                   Text="Arredondar para Baixo"
+                   Clicked="ButtonRoundDown_Clicked"
+                />      
+                </HorizontalStackLayout>
+               
+            </HorizontalStackLayout>
+           
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
