@@ -32,7 +32,7 @@
                     Text="10%"/>
             </HorizontalStackLayout>
             <Slider
-                x:Name="PercentageSlider"
+                x:Name="PercentagesSlider"
                 Minimum="0"
                 Maximum="100"
    
@@ -48,7 +48,7 @@
                 <Button
                       x:Name="Button30Percent"
                       Text="30%"
-                    SemanticProperties.Hint="Cliqueaqui sevoce acha que o serviço foi ótimo"
+                    SemanticProperties.Hint="Clique aqui sevoce acha que o serviço foi ótimo"
                       Clicked="Button30Percent_Clicked"
                    />
                 <HorizontalStackLayout>

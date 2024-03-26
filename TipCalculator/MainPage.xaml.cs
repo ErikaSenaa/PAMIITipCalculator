@@ -1,4 +1,6 @@
-﻿namespace TipCalculator
+﻿using Microsoft.Extensions.Options;
+
+namespace TipCalculator
 {
     public partial class MainPage : ContentPage
     {
@@ -9,22 +11,40 @@
             InitializeComponent();
         }
 
-        public void Button15Percent(object sender, EventArgs e)
+        private void Button15Percent(object sender, EventArgs e)
         {
-            TipPercentLabel.Text = $" {PercentageSlider.Value.ToString()}";
+           PercentagesSlider.Value = 15;
         }
-        public void Button30Percent(object sender, EventArgs e)
+        private void Button30Percent(object sender, EventArgs e)
+        {
+            PercentagesSlider.Value = 30;
+
+        }
+        private void ButtonRoundUp(object sender, EventArgs e)
+        {
+            double tip = CalculateTip();
+            tip = Math.Ceiling(tip);
+            TigLabel.Text = tip.ToString("C2");
+            double Valrefeicao = tip + Convert.ToDouble(ValueEntry.Text);
+            TotalLabel.Text = Valrefeicao.ToString("C2");
+        }
+        private void ButtonRoundDown(object sender, EventArgs e)
         {
 
         }
-        public void ButtonRoundUp(object sender, EventArgs e)
+        private double CalculateTip()
         {
-
+            double Valrefeição = Convert.ToDouble(ValueEntry.Text);
+            double Valporcentagem = Convert.ToDouble(PercentagesSlider.Value);
+            double ValorGorjeta = Valrefeição*(Valporcentagem/100);
+            return (ValorGorjeta);
         }
-        public void ButtonRoundDown(object sender, EventArgs e)
+        private void PercentagensSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-
+            TigLabel.Text = $"{PercentagesSlider.Value.ToString()}%";
+                
         }
     }
+
 
 }
